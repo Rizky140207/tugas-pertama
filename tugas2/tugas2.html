@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: #eef2f7;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            background: linear-gradient(to right, #4A8FE7, #6AA9F8);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar .brand {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar .menu span {
+            margin-left: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .navbar .menu span:hover {
+            color: #FFE082;
+            transform: translateY(-2px);
+        }
+
+        .header-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .header-text {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-text button {
+            padding: 12px 25px;
+            background: #4A8FE7;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            margin: auto;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .header-text button:hover {
+            background: #2f6cc1;
+            transform: scale(1.05);
+        }
+
+        .header-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .biodata-head {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .biodata-isi {
+            max-width: 800px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: white;
+            padding: 25px;
+            gap: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .biodata-isi div {
+            background: #e9f1ff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .biodata-isi div:hover {
+            background: #d7e6ff;
+            transform: translateY(-3px);
+        }
+
+        .portofolio-head {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .portofolio-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            padding: 20px;
+        }
+
+        .portofolio-item {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .portofolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .portofolio-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: #4A8FE7;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .biodata-isi {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portofolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .biodata-isi {
+                grid-template-columns: 1fr;
+            }
+            .portofolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar .menu span {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="brand">MyProfile</div>
+            <div class="menu">
+                <span>Header</span>
+                <span>Biodata</span>
+                <span>Portofolio</span>
+            </div>
+        </nav>
+    </div>
+
+    <!-- HEADER -->
+    <div class="header-wrapper">
+        <div class="header-text">
+            <h2 style="text-align: center;">Selamat Datang Di Website Saya</h2>
+            <p style="text-align:center;">Website ini berisi informasi tentang saya dan karya yang pernah saya buat.</p>
+            <button>Pelajari Lebih Lanjut</button>
+        </div>
+
+        <div class="header-image">
+            <img src="https://png.pngtree.com/thumb_back/fh260/background/20241008/pngtree-breathtaking-panoramic-view-of-a-summer-landscape-featuring-majestic-waterfalls-charming-image_16334134.jpg">
+        </div>
+    </div>
+
+    <!-- BIODATA -->
+    <div class="biodata-head">
+        <h2>About Me</h2>
+        <p>A brief introduction about myself</p>
+    </div>
+
+    <div class="biodata-isi">
+        <div>Full Name: Muhammad Rizky Putra Suryaman</div>
+        <div>Education: SMK</div>
+        <div>Pekerjaan: Pelajar</div>
+        <div>Contact: 08xxxxxxx</div>
+        <div>Hobi: Gaming</div>
+        <div>Alamat: Cibinong, Bogor</div>
+    </div>
+
+    <!-- PORTOFOLIO -->
+    <div class="portofolio-head">
+        <h2>Portofolio</h2>
+    </div>
+
+    <div class="portofolio-grid">
+        <div class="portofolio-item">
+            <img src="https://picsum.photos/300/200?random=1">
+            <br><b>Proyek Website</b><br>
+            Website sederhana menggunakan HTML dan CSS
+        </div>
+
+        <div class="portofolio-item">
+            <img src="https://picsum.photos/300/200?random=2">
+            <br><b>Proyek PHP</b><br>
+            Aplikasi CRUD dengan Database
+        </div>
+
+        <div class="portofolio-item">
+            <img src="https://picsum.photos/300/200?random=3">
+            <br><b>Desain UI/UX</b><br>
+            Desain aplikasi mobile modern
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Website Saya. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
