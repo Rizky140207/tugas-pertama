@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Muhammad Rizky</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">RIZKY<span style="color:var(--main-color)">.</span></a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <h3 class="fw-bold">Halo, Saya Rizky</h3>
+                    <h1>And I'm a <span style="color:var(--main-color)">Frontend Developer</span></h1>
+                    <p class="my-4">Saya adalah seorang pelajar yang fokus pada pengembangan web. Senang mempelajari teknologi baru seperti HTML, CSS, JavaScript, dan framework modern lainnya.</p>
+                    <div class="social-icons mb-4">
+                        <a href="#" class="btn btn-outline-info rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-info rounded-circle me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-info rounded-circle me-2"><i class="far fa-envelope"></i></a>
+                        <a href="#" class="btn btn-outline-info rounded-circle"><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href="#" class="btn btn-custom me-3">Download CV</a>
+                    <button class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#portfolioModal">Portfolio</button>
+                </div>
+                <div class="col-md-5 d-flex justify-content-center">
+                    <img src="image/78f5771f20bb4608e0bc73407a92f67e-removebg-preview.png" alt="Rizky" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">About <span style="color:var(--main-color)">Me</span></h2>
+            <div class="row align-items-center">
+                <div class="col-md-5 mb-4 d-flex justify-content-center">
+                    <div class="about-img-box">
+                        <img src="image/78f5771f20bb4608e0bc73407a92f67e-removebg-preview.png" alt="Profile">
+                        <div class="text-center mt-3 text-dark fw-bold">
+                            MUHAMMAD RIZKY <br>
+                            <small>Pelajar / Developer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <div class="biodata-box">
+                                <i class="fas fa-user"></i>
+                                <span class="biodata-label">Full Name</span>
+                                <span class="biodata-value">Muhammad Rizky Putra Suryaman</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="biodata-box">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span class="biodata-label">Education</span>
+                                <span class="biodata-value">SMK (Sekolah Menengah Kejuruan)</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="biodata-box">
+                                <i class="fas fa-briefcase"></i>
+                                <span class="biodata-label">Pekerjaan</span>
+                                <span class="biodata-value">Pelajar / Student</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="biodata-box">
+                                <i class="fas fa-phone"></i>
+                                <span class="biodata-label">Contact</span>
+                                <span class="biodata-value">08xxxxxxx</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="biodata-box">
+                                <i class="fas fa-gamepad"></i>
+                                <span class="biodata-label">Hobi</span>
+                                <span class="biodata-value">Gaming & Coding</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="biodata-box">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span class="biodata-label">Alamat</span>
+                                <span class="biodata-value">Cibinong, Bogor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5 bg-dark">
+        <div class="container">
+            <h2 class="text-center mb-5">My <span style="color:var(--main-color)">Skills</span></h2>
+            <div class="row">
+                <div class="col-md-6 skill-bar">
+                    <div class="d-flex justify-content-between">
+                        <span><i class="fab fa-html5 text-danger"></i> HTML - 5</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="progress mt-2"><div class="progress-bar" style="width: 90%;"></div></div>
+                </div>
+                <div class="col-md-6 skill-bar">
+                    <div class="d-flex justify-content-between">
+                        <span><i class="fab fa-css3-alt text-primary"></i> CSS - 3</span>
+                        <span>80%</span>
+                    </div>
+                    <div class="progress mt-2"><div class="progress-bar" style="width: 80%;"></div></div>
+                </div>
+                <div class="col-md-6 skill-bar">
+                    <div class="d-flex justify-content-between">
+                        <span><i class="fab fa-js text-warning"></i> Java Script</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="progress mt-2"><div class="progress-bar" style="width: 60%;"></div></div>
+                </div>
+                <div class="col-md-6 skill-bar">
+                    <div class="d-flex justify-content-between">
+                        <span><i class="fab fa-react text-info"></i> React</span>
+                        <span>60%</span>
+                    </div>
+                    <div class="progress mt-2"><div class="progress-bar" style="width: 60%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">My <span style="color:var(--main-color)">Services</span></h2>
+        <div class="row g-4">
+            
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Web Design</h4>
+                    <p>Mendesain tampilan website yang modern, responsif, dan ramah pengguna.</p>
+                    <button class="btn btn-outline-custom mt-3" data-bs-toggle="modal" data-bs-target="#webDesignModal">Detail</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-code"></i>
+                    <h4>Web Development</h4>
+                    <p>Membangun fungsionalitas website menggunakan teknologi terbaru.</p>
+                    <button class="btn btn-outline-custom mt-3" data-bs-toggle="modal" data-bs-target="#webDevModal">Detail</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Responsive Design</h4>
+                    <p>Memastikan website Anda tampil sempurna di perangkat mobile maupun desktop.</p>
+                    <button class="btn btn-outline-custom mt-3" data-bs-toggle="modal" data-bs-target="#responsiveModal">Detail</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p class="footer-text mb-0">
+                &copy; 2025 Website Bikinan <span>Rizky</span>
+            </p>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="portfolioModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark border-info">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-white">My Projects</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-0"> <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60" class="d-block w-100" alt="Project 1">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded shadow">
+                    <h5>Website Portofolio</h5>
+                    <p>Desain responsif menggunakan HTML, CSS, dan Bootstrap 5.</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=60" class="d-block w-100" alt="Project 2">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded shadow">
+                    <h5>Aplikasi To-Do List</h5>
+                    <p>Membangun logika aplikasi interaktif dengan JavaScript ES6.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="webDesignModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark border-info text-white">
+            <div class="modal-header border-bottom border-secondary">
+                <h5 class="modal-title"><i class="fas fa-globe me-2 text-info"></i>Detail Web Design</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Layanan desain web saya mencakup:</p>
+                <ul class="text-start">
+                    <li>Pembuatan UI/UX yang modern menggunakan Figma.</li>
+                    <li>Pemilihan palet warna yang sesuai dengan branding.</li>
+                    <li>Tipografi yang mudah dibaca di semua layar.</li>
+                    <li>User Experience yang intuitif agar pengunjung betah.</li>
+                </ul>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="webDevModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark border-info text-white">
+            <div class="modal-header border-bottom border-secondary">
+                <h5 class="modal-title"><i class="fas fa-code me-2 text-info"></i>Detail Web Development</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Fokus pengembangan saya meliputi:</p>
+                <ul class="text-start">
+                    <li>Konversi desain ke kode HTML5 & CSS3 yang bersih.</li>
+                    <li>Interaktivitas menggunakan JavaScript modern (ES6+).</li>
+                    <li>Integrasi Framework seperti Bootstrap atau React.</li>
+                    <li>Optimasi performa website agar loading lebih cepat.</li>
+                </ul>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="responsiveModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark border-info text-white">
+            <div class="modal-header border-bottom border-secondary">
+                <h5 class="modal-title"><i class="fas fa-mobile-alt me-2 text-info"></i>Detail Responsive Design</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Menjamin aksesibilitas di berbagai perangkat:</p>
+                <ul class="text-start">
+                    <li>Layout yang fleksibel (Mobile-First Approach).</li>
+                    <li>Kesesuaian tampilan di HP, Tablet, Laptop, hingga Monitor 4K.</li>
+                    <li>Optimasi gambar agar tetap ringan di jaringan mobile.</li>
+                    <li>Navigasi yang ramah sentuhan (touch-friendly).</li>
+                </ul>
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-custom" data-bs-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
