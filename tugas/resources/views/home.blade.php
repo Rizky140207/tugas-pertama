@@ -1,6 +1,25 @@
 @extends('layout')
 @section('title', 'E-Commerce Website')
 @section('content')
+
+<style>
+    .thumbnail_produk {
+        height: 220px;
+        width: 100%;
+        overflow: hidden;
+        border-top-left-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+        background-color: #f8f9fa;
+    }
+
+    .thumbnail_produk img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+    }
+</style>
+
 <!-- HERO -->
 <section class="hero text-center">
     <div class="container">
@@ -23,17 +42,18 @@
     </div>
 
     <div class="row g-4">
-
-        <!-- PRODUK -->
+        @foreach ($products as $product)
         <div class="col-md-3">
-            <div class="card product-card h-100">
+            <div class="card product-card h-100 position-relative">
                 <span class="badge bg-danger position-absolute m-2">Diskon</span>
-                <img src="https://via.placeholder.com/300x220" class="card-img-top">
+
+                <div class="thumbnail_produk">
+                    <img src="{{ $product->image }}" alt="{{ $product->name }}">
+                </div>
+
                 <div class="card-body">
-                    <h6 class="card-title">Headphone Gaming</h6>
-                    <div class="mb-2">⭐⭐⭐⭐☆</div>
-                    <p class="old-price">Rp 350.000</p>
-                    <p class="price">Rp 299.000</p>
+                    <h6 class="card-title">{{ $product->name }}</h6>
+                    <p class="price">{{ $product->price }}</p>
                     <div class="d-grid gap-2">
                         <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
                         <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a>
@@ -41,53 +61,11 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-3">
-            <div class="card product-card h-100">
-                <img src="https://via.placeholder.com/300x220" class="card-img-top">
-                <div class="card-body">
-                    <h6 class="card-title">Keyboard Mechanical</h6>
-                    <div class="mb-2">⭐⭐⭐⭐⭐</div>
-                    <p class="price">Rp 450.000</p>
-                    <div class="d-grid gap-2">
-                        <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
-                        <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card product-card h-100">
-                <span class="badge bg-success position-absolute m-2">New</span>
-                <img src="https://via.placeholder.com/300x220" class="card-img-top">
-                <div class="card-body">
-                    <h6 class="card-title">Mouse Wireless</h6>
-                    <div class="mb-2">⭐⭐⭐⭐☆</div>
-                    <p class="price">Rp 180.000</p>
-                    <div class="d-grid gap-2">
-                        <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
-                        <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="card product-card h-100">
-                <img src="https://via.placeholder.com/300x220" class="card-img-top">
-                <div class="card-body">
-                    <h6 class="card-title">Monitor 24 Inch</h6>
-                    <div class="mb-2">⭐⭐⭐⭐⭐</div>
-                    <p class="price">Rp 2.100.000</p>
-                    <div class="d-grid gap-2">
-                        <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
-                        <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        @endforeach
+        <div>
+            {{$products->links()}}
+    </div>
     </div>
 </div>
+
 @endsection
