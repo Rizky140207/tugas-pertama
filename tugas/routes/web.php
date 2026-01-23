@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return 'ini adalah route utama';
@@ -18,3 +19,5 @@ Route::get('/cart', function () {
 Route::get('/checkout', function () {
     return 'ini adalah route checkout';
 });
+
+Route::resource('products-r', ProductController::class);
