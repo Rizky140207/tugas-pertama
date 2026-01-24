@@ -9,9 +9,23 @@
                 <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Produk</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Keranjang</a></li>
-                <li class="nav-item">
-                    <a class="btn btn-primary btn-sm ms-3" href="#">Login</a>
+                 @if (Route::has('login'))
+                    @auth
+                      <li class="nav-item">
+                    <a class="btn btn-primary btn-sm ms-3" href="{{ url('/dashboard') }}">Dashboard</a>
                 </li>
+                    @else
+                         <li class="nav-item">
+                    <a class="btn btn-primary btn-sm ms-3" href="{{ route('login') }}">Log in</a>
+                </li>
+
+                        @if (Route::has('register'))
+                             <li class="nav-item">
+                    <a class="btn btn-primary btn-sm ms-3" href="{{ route('register') }}">Register</a>
+                </li>
+                        @endif
+                    @endauth
+            @endif
             </ul>
         </div>
     </div>
