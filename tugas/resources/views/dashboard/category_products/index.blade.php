@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Product') }}
+            {{ __('Kategori Produk') }}
         </h2>
     </x-slot>
 <div class="container mt-5">
@@ -10,9 +10,9 @@
 
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="fw-bold mb-0">Product</h4>
+                <h4 class="fw-bold mb-0">Kategori Produk</h4>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahKategori">
-                    + Tambah Product
+                    + Tambah Kategori
                 </button>
             </div>
 
@@ -23,27 +23,21 @@
                         <tr>
                             <th>ID</th>
                             <th>Nama Kategori</th>
-                            <th>Deskripsi</th>
-                            <th>Stok</th>
-                            <th>Harga</th>
-                            <th>Gambar</th>
+                            <th>Jumlah Produk</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Produk A</td>
                             <td>Elektronik</td>
                             <td>12</td>
-                            <td>Rp20.000</td>
-                            <td><img src="https://via.placeholder.com/150" alt="Product A"></td>
                             <td>
                                 <button class="btn btn-warning btn-sm">Edit</button>
                                 <button class="btn btn-danger btn-sm">Hapus</button>
                             </td>
                         </tr>
-                        {{-- <tr>
+                        <tr>
                             <td>2</td>
                             <td>Pakaian</td>
                             <td>8</td>
@@ -60,7 +54,7 @@
                                 <button class="btn btn-warning btn-sm">Edit</button>
                                 <button class="btn btn-danger btn-sm">Hapus</button>
                             </td>
-                        </tr> --}}
+                        </tr>
                     </tbody>
                 </table>
             </div>

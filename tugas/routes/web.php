@@ -20,4 +20,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/products', function () {
+    return view('dashboard.products.index');
+})->name('products');
+
+Route::get('/category-products', function () {
+    return view('dashboard.category_products.index'); 
+})->name('category-products');
+
 require __DIR__.'/auth.php';
