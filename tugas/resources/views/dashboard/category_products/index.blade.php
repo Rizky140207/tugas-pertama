@@ -11,9 +11,9 @@
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="fw-bold mb-0">Kategori Produk</h4>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahKategori">
+                <a href="{{ route('category-products-tambah') }}" class="btn btn-primary">
                     + Tambah Kategori
-                </button>
+                </a>
             </div>
 
             <!-- Tabel -->
@@ -33,7 +33,7 @@
                             <td>Elektronik</td>
                             <td>12</td>
                             <td>
-                                <button class="btn btn-warning btn-sm">Edit</button>
+                                <a href="{{ route('category-products-edit') }}" class="btn btn-warning btn-sm">Edit</a>
                                 <button class="btn btn-danger btn-sm">Hapus</button>
                             </td>
                         </tr>
