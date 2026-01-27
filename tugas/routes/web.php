@@ -20,9 +20,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/products', function () {
+Route::middleware('admin')->group(function () {
+    Route::get('/products', function () {
     return view('dashboard.products.index');
 })->name('products');
+});
 
 Route::get('/products/tambah', function () {
     return view('dashboard.products.tambah');
