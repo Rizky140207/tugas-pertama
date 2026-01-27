@@ -9,7 +9,44 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+                    {{-- {{ __("You're logged in!") }} --}}
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                    <div class="card bg-primary-subtle">
+                        <div class="card-header fw-bold">
+                             Jumlah Produk
+                                </div>
+                                    <div class="card-body">
+                                     <h5 class="card-title fw-bold" style="font-size: 30px">150</h5>
+                                        <p class="card-text">Total produk yang tersedia di sistem</p>
+                                    </div>
+                    </div>
+                        </div>
+                          <div class="col-md-4">
+                    <div class="card bg-success-subtle">
+                        <div class="card-header fw-bold">
+                             Jumlah Klik Produk
+                                </div>
+                                    <div class="card-body">
+                                     <h5 class="card-title fw-bold" style="font-size: 30px">12,500</h5>
+                                        <p class="card-text">Total klik produk yang telah dilihat pengguna</p>
+                                    </div>
+                    </div>
+                        </div>
+                          <div class="col-md-4">
+                    <div class="card bg-warning-subtle">
+                        <div class="card-header fw-bold">
+                             Jumlah Produk
+                                </div>
+                                    <div class="card-body">
+                                     <h5 class="card-title fw-bold" style="font-size: 30px">10</h5>
+                                        <p class="card-text">Total kategori produk yang tersedia di sistem</p>
+                                    </div>
+                    </div>
+                        </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
