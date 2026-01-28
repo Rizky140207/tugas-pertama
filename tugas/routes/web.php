@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\ProductController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -24,6 +26,8 @@ Route::middleware('admin')->group(function () {
     Route::get('/products', function () {
     return view('dashboard.products.index');
 })->name('products');
+Route::resource('product-category', ProductCategoryController::class);
+Route::resource('product', ProductController::class);
 });
 
 Route::get('/products/tambah', function () {

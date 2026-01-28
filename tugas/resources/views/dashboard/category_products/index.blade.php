@@ -26,37 +26,23 @@
                             <th>Jumlah Produk</th>
                             <th>Aksi</th>
                         </tr>
+                       
                     </thead>
                     <tbody>
+                            @foreach($categories as $category)
                         <tr>
-                            <td>1</td>
-                            <td>Elektronik</td>
-                            <td>12</td>
+                            <td>{{$category->id}}</td>
+                            <td>{{$category->name}}</td>
+                            <td>{{$category->product_count}}</td>
                             <td>
                                 <a href="{{ route('category-products-edit') }}" class="btn btn-warning btn-sm">Edit</a>
                                 <button class="btn btn-danger btn-sm">Hapus</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Pakaian</td>
-                            <td>8</td>
-                            <td>
-                                <button class="btn btn-warning btn-sm">Edit</button>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Makanan</td>
-                            <td>15</td>
-                            <td>
-                                <button class="btn btn-warning btn-sm">Edit</button>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
-                            </td>
-                        </tr>
+                         @endforeach
                     </tbody>
                 </table>
+                {{$categories->links()}}
             </div>
 
         </div>

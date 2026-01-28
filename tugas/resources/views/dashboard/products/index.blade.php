@@ -31,38 +31,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($products as $product)
                         <tr>
-                            <td>1</td>
-                            <td>Produk A</td>
-                            <td>Elektronik</td>
-                            <td>12</td>
-                            <td>Rp20.000</td>
-                            <td><img src="https://via.placeholder.com/150" alt="Product A"></td>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->name}}</td>
+                            <td>{{$product->description}}</td>
+                            <td>{{$product->stock}}</td>
+                            <td>Rp{{number_format($product->price, 0, ",", ".")}}</td>
+                            <td><img src="{{$product->image}}" alt="Product A" class="img-fluid" style="max-height:150px"></td>
                             <td>
                                 <a href="{{ route('products-edit') }}" class="btn btn-warning btn-sm">Edit</a>
                                 <button class="btn btn-danger btn-sm">Hapus</button>
                             </td>
                         </tr>
-                        {{-- <tr>
-                            <td>2</td>
-                            <td>Pakaian</td>
-                            <td>8</td>
-                            <td>
-                                <button class="btn btn-warning btn-sm">Edit</button>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Makanan</td>
-                            <td>15</td>
-                            <td>
-                                <button class="btn btn-warning btn-sm">Edit</button>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
-                            </td>
-                        </tr> --}}
+                        @endforeach
                     </tbody>
                 </table>
+                {{$products->links()}}
             </div>
 
         </div>
