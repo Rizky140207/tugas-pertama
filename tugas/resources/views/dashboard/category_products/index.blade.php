@@ -7,11 +7,25 @@
 <div class="container mt-5">
     <div class="card shadow-sm">
         <div class="card-body">
-
+@if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="fw-bold mb-0">Kategori Produk</h4>
-                <a href="{{ route('category-products-tambah') }}" class="btn btn-primary">
+                <a href="{{ route('product-category.create') }}" class="btn btn-primary">
                     + Tambah Kategori
                 </a>
             </div>

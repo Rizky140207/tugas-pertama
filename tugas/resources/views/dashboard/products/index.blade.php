@@ -1,3 +1,6 @@
+@php
+    use Illuminate\Support\Str;
+@endphp
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -7,11 +10,25 @@
 <div class="container mt-5">
     <div class="card shadow-sm">
         <div class="card-body">
-
+            @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             <!-- Header -->
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <h4 class="fw-bold mb-0">Product</h4>
-                <a href="{{ route('products-tambah') }}" class="btn btn-primary">
+                <a href="{{ route('product.create') }}" class="btn btn-primary">
                     + Tambah Product
                 </a>
             </div>
@@ -22,7 +39,7 @@
                     <thead class="table-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Nama Kategori</th>
+                            <th>Nama Product</th>
                             <th>Deskripsi</th>
                             <th>Stok</th>
                             <th>Harga</th>
@@ -36,9 +53,28 @@
                             <td>{{$product->id}}</td>
                             <td>{{$product->name}}</td>
                             <td>{{$product->description}}</td>
-                            <td>{{$product->stock}}</td>
+                            <td>{{$product->stok}}</td>
                             <td>Rp{{number_format($product->price, 0, ",", ".")}}</td>
-                            <td><img src="{{$product->image}}" alt="Product A" class="img-fluid" style="max-height:150px"></td>
+                            <td>
+    @if($product->image)
+        @if(Str::startsWith($product->image, ['http://', 'https://']))
+            {{-- gambar dari internet --}}
+            <img src="{{ $product->image }}"
+                 alt="{{ $product->name }}"
+                 class="img-fluid"
+                 style="max-height:150px">
+        @else
+            {{-- gambar dari storage --}}
+            <img src="{{ asset('storage/' . $product->image) }}"
+                 alt="{{ $product->name }}"
+                 class="img-fluid"
+                 style="max-height:150px">
+        @endif
+    @else
+        N/A
+    @endif
+</td>
+
                             <td>
                                 <a href="{{ route('products-edit') }}" class="btn btn-warning btn-sm">Edit</a>
                                 <button class="btn btn-danger btn-sm">Hapus</button>

@@ -11,15 +11,32 @@
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0">Tambah Kategori Baru</h5>
                 </div>
+                @if (session('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                @endif
+                                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="card-body">
-                    <form action="#" method="post">
+                    <form action="{{ route('product-category.store') }}" method="post">
+                        @csrf
                         <div class="mb-3">
                             <label class="form-label">Nama Kategori</label>
                             <input 
                                 type="text" 
-                                name="nama_kategori" 
+                                name="name" 
                                 class="form-control" 
                                 placeholder="Masukkan nama kategori"
+                                value="{{ old('name') }}"
                                 required
                             >
                         </div>
