@@ -49,8 +49,11 @@
                             <td>{{$category->name}}</td>
                             <td>{{$category->product_count}}</td>
                             <td>
-                                <a href="{{ route('category-products-edit') }}" class="btn btn-warning btn-sm">Edit</a>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                <a href="{{ route('product-category.edit', $category->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('product-category.destroy', $category->id) }}" method="POST" style="display: inline">
+                                    @csrf @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus kategori ini?')">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                          @endforeach

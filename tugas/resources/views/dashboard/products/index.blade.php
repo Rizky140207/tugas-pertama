@@ -1,6 +1,3 @@
-@php
-    use Illuminate\Support\Str;
-@endphp
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -53,31 +50,15 @@
                             <td>{{$product->id}}</td>
                             <td>{{$product->name}}</td>
                             <td>{{$product->description}}</td>
-                            <td>{{$product->stok}}</td>
+                            <td>{{$product->stock}}</td>
                             <td>Rp{{number_format($product->price, 0, ",", ".")}}</td>
+                            <td><img src="{{ asset('storage/' . $product->image) }}" alt="Product A" class="img-fluid" style="max-height:150px"></td>
                             <td>
-    @if($product->image)
-        @if(Str::startsWith($product->image, ['http://', 'https://']))
-            {{-- gambar dari internet --}}
-            <img src="{{ $product->image }}"
-                 alt="{{ $product->name }}"
-                 class="img-fluid"
-                 style="max-height:150px">
-        @else
-            {{-- gambar dari storage --}}
-            <img src="{{ asset('storage/' . $product->image) }}"
-                 alt="{{ $product->name }}"
-                 class="img-fluid"
-                 style="max-height:150px">
-        @endif
-    @else
-        N/A
-    @endif
-</td>
-
-                            <td>
-                                <a href="{{ route('products-edit') }}" class="btn btn-warning btn-sm">Edit</a>
-                                <button class="btn btn-danger btn-sm">Hapus</button>
+                                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('product.destroy', $product->id) }}" method="POST" style="display: inline">
+                                    @csrf @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Apakah kamu yakin ingin menggapus product ini?')">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

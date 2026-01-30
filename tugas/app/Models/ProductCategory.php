@@ -3,11 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\product;
 
 class ProductCategory extends Model
 {
     public function product(){
-        return $this->hasMany(product::class);
+        return $this->hasMany(Product::class, 'product_category_id');
     }
 }

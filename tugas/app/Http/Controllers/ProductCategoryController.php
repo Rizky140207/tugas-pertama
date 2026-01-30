@@ -63,7 +63,9 @@ class ProductCategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = ProductCategory::findOrFail($id);
+
+        return view('dashboard.category_products.edit', compact('category'));
     }
 
     /**
@@ -71,7 +73,25 @@ class ProductCategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+        ]);
+
+        $category_name_check = ProductCategory::where('name', $request->name)
+                                    ->exists();
+
+        if($category_name_check){
+            return back()
+                ->withInput()
+                ->withErrors('Category name already exists');
+        }else{
+        $category = ProductCategory::findOrFail($id);
+        $category->name = $request->name;
+        $category->save();
+        return redirect()
+            ->route('product-category.index')
+            ->with('success', 'Category updated succsessfully');
+        } 
     }
 
     /**
@@ -79,6 +99,11 @@ class ProductCategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+       $category = ProductCategory::findOrFail($id);
+       $category->delete();
+
+       return redirect()
+            ->route('product-category.index')
+            ->with('success', 'Category deleted successfully');
     }
 }
