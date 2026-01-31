@@ -18,7 +18,7 @@
                              Jumlah Produk
                                 </div>
                                     <div class="card-body">
-                                     <h5 class="card-title fw-bold" style="font-size: 30px">150</h5>
+                                     <h5 class="card-title fw-bold" style="font-size: 30px">{{$jumlahProduct}}</h5>
                                         <p class="card-text">Total produk yang tersedia di sistem</p>
                                     </div>
                     </div>
@@ -29,7 +29,7 @@
                              Jumlah Klik Produk
                                 </div>
                                     <div class="card-body">
-                                     <h5 class="card-title fw-bold" style="font-size: 30px">12,500</h5>
+                                     <h5 class="card-title fw-bold" style="font-size: 30px">{{$jumlahClikProduct}}</h5>
                                         <p class="card-text">Total klik produk yang telah dilihat pengguna</p>
                                     </div>
                     </div>
@@ -40,7 +40,7 @@
                              Jumlah Produk
                                 </div>
                                     <div class="card-body">
-                                     <h5 class="card-title fw-bold" style="font-size: 30px">10</h5>
+                                     <h5 class="card-title fw-bold" style="font-size: 30px">{{$jumlahKategoriProduct}}</h5>
                                         <p class="card-text">Total kategori produk yang tersedia di sistem</p>
                                     </div>
                     </div>

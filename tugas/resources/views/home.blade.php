@@ -48,12 +48,12 @@
                 <span class="badge bg-danger position-absolute m-2">Diskon</span>
 
                 <div class="thumbnail_produk">
-                    <img src="{{ $product->image }}" alt="{{ $product->name }}">
+                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
                 </div>
 
                 <div class="card-body">
                     <h6 class="card-title">{{ $product->name }}</h6>
-                    <p class="price">{{ $product->price }}</p>
+                    <p class="price">Rp{{number_format($product->price, 0, ",", ".")}}</p>
                     <div class="d-grid gap-2">
                         <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
                         <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a>
