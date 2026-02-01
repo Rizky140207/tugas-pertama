@@ -28,7 +28,15 @@
 
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <input type="text" class="form-control form-control-lg" placeholder="Cari produk favoritmu...">
+               <form action="{{ route('home') }}" method="GET">
+                <input 
+                    type="text" 
+                    name="search"
+                    value="{{ request('search') }}"
+                    class="form-control form-control-lg" 
+                    placeholder="Cari produk favoritmu..."
+                >
+            </form>
             </div>
         </div>
     </div>
@@ -55,15 +63,15 @@
                     <h6 class="card-title">{{ $product->name }}</h6>
                     <p class="price">Rp{{number_format($product->price, 0, ",", ".")}}</p>
                     <div class="d-grid gap-2">
-                        <a href="#" class="btn btn-outline-primary btn-sm">Detail</a>
-                        <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a>
+                        <a href="{{ route('product.click', $product->id) }}" target="_blank" class="btn btn-outline-primary btn-sm">Beli Sekarang</a>
+                        {{-- <a href="#" class="btn btn-primary btn-sm">Tambah ke Keranjang</a> --}}
                     </div>
                 </div>
             </div>
         </div>
         @endforeach
         <div>
-            {{$products->links()}}
+           {{ $products->appends(request()->query())->links() }}
     </div>
     </div>
 </div>

@@ -11,8 +11,10 @@ use App\Http\Controllers\DashboardController;
 //     return view('welcome');
 // });
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('click-product/{product_id}', [HomeController::class, 'click'])
+        ->name('product.click');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
